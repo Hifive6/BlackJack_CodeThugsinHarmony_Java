@@ -18,9 +18,9 @@
         //Reset the players's hand to have no Cards
         public void emptyHand() {
             for (int c = 0; c < 10; c++) {
-                this.hand[c] = name;
+                this.hand[c] = null;
     
-                this.emptyHand();
+                this.numberOfCards = 0;
             }
         }
     
