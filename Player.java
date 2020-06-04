@@ -6,7 +6,7 @@
     
         private int numberOfCards;
 
-        private Card hand = new Card(null, numberOfCards);;
+        private Card hand;
     
         //Constructor for Player class
         public Player(String name) {

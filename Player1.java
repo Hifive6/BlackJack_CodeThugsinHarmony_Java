@@ -76,9 +76,9 @@ public class Player1 {
 
     }
 
-    public static void main(String[] args) {
-        Player1 player = new Player1();
-        player.getBet();
-        player.updateBalanceMoney();
-    }
+    // public static void main(String[] args) {
+    //     Player1 player = new Player1();
+    //     player.getBet();
+    //     player.updateBalanceMoney();
+    // }
 }

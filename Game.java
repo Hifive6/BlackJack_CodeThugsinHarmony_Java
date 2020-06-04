@@ -53,13 +53,13 @@ public class Game {
             // While loop for drawing new cards
             while (true) {
                 // Display player cards
-                thePlayer.printPlayersHand(false);
+                thePlayer.printPlayersHand(true);
 
                 // Display Value
                 System.out.println("Your hand is currently valued at: " + thePlayer.getHandSum());
 
                 // Display dealer cards
-                dealer.printPlayersHand(true);
+                dealer.printPlayersHand(false);
 
                 // What do they want to do
                 System.out.println("Would you like to (1)Hit or (2)Stand");
@@ -69,7 +69,7 @@ public class Game {
                     //add the next card in the deck if the player hits 1
                     thePlayer.addCardHand(playingDeck.dealNextCard());
                     //print the players hand
-                    thePlayer.printPlayersHand(false);
+                    thePlayer.printPlayersHand(true);
                     // Bust if they go over 21
                     if (thePlayer.getHandSum() > 21) {
                         System.out.println("Bust. Currently valued at: " + thePlayer.getHandSum());
