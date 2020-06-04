@@ -1,7 +1,7 @@
 /**
  * Player
  */
-    public class PlayerClass {
+    public class Player {
         private String name;
     
         private Card[] hand = new Card[10];
@@ -75,9 +75,9 @@
             for (int i = 0; i < this.numberOfCards; i++) {
     
                 if (i == 0 && !showFirstCard) {
-                    System.outprintln(" [hidden] ");
+                    System.out.println(" [hidden] ");
                 } else {
-                    System.outprintf(" %s\n", this.hand[c].toString());
+                    System.out.printf(" %s\n", this.hand[i].toString());
                 }
             }
         }
