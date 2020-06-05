@@ -5,7 +5,7 @@ public class Game {
     public static void main(String[] args) {
 
         System.out.println("Welcome to Blackjack!");
-        //Creating the Deck from the Deck class and shuffling them
+        // Creating the Deck from the Deck class and shuffling them
         Deck playingDeck = new Deck(1, true);
 
         // Created two players the real player and the dealer
@@ -13,7 +13,6 @@ public class Game {
         Player dealer = new Player("dealer");
         // playingDeck.createFullDeck();
         // playingDeck.shuffle();
-        
 
         // playerCards will be the cards the player has in their hand
         // Deck playerCards = new Deck();
@@ -46,7 +45,7 @@ public class Game {
             thePlayer.addCardHand(playingDeck.dealNextCard());
             thePlayer.addCardHand(playingDeck.dealNextCard());
 
-            // Dealer gets two cards
+            // // Dealer gets two cards
             dealer.addCardHand(playingDeck.dealNextCard());
             dealer.addCardHand(playingDeck.dealNextCard());
 
@@ -66,10 +65,10 @@ public class Game {
                 int response = userInput.nextInt();
                 // They hit
                 if (response == 1) {
-                    //add the next card in the deck if the player hits 1
+                    // add the next card in the deck if the player hits 1
                     thePlayer.addCardHand(playingDeck.dealNextCard());
-                    //print the players hand
-                    thePlayer.printPlayersHand(true);
+                    // print the players hand
+                    // thePlayer.printPlayersHand(true);
                     // Bust if they go over 21
                     if (thePlayer.getHandSum() > 21) {
                         System.out.println("Bust. Currently valued at: " + thePlayer.getHandSum());
@@ -95,7 +94,7 @@ public class Game {
                 endRound = true;
             }
             // Dealer hits at 16 stands at 17
-            while ((thePlayer.getHandSum() < 17) && endRound == false) {
+            while ((dealer.getHandSum() < 17) && endRound == false) {
                 dealer.addCardHand(playingDeck.dealNextCard());
                 dealer.printPlayersHand(false);
             }
@@ -108,7 +107,7 @@ public class Game {
                 endRound = true;
             }
             // Determine if push
-            if ((dealer.getHandSum() == dealer.getHandSum()) && endRound == false) {
+            if ((thePlayer.getHandSum() == dealer.getHandSum()) && endRound == false) {
                 System.out.println("Push.");
                 endRound = true;
             }
