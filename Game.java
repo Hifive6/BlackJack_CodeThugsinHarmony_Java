@@ -6,7 +6,7 @@ public class Game {
 
         System.out.println("Welcome to Blackjack!");
         //Creating the Deck from the Deck class and shuffling them
-        Deck playingDeck = new Deck(8, true);
+        Deck playingDeck = new Deck(1, true);
 
         // Created two players the real player and the dealer
         Player thePlayer = new Player("Joe");

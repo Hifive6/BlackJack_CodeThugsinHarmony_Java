@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Player
  */
@@ -6,11 +8,12 @@
     
         private int numberOfCards;
 
-        private Card hand;
+        private ArrayList<Card> hand;
     
         //Constructor for Player class
         public Player(String name) {
             this.name = name;
+            this.hand = new ArrayList<Card>();
     
             this.emptyHand();
         }
@@ -25,19 +28,21 @@
         }
     
         //Add a card to the player's hand
-        public boolean addCardHand(Card aCard) {
+        public void addCardHand(Card aCard) {
     
             // print error if we have the max allowed card in hand
             if (this.numberOfCards == 10) {
                 System.err.println("");
                 System.exit(1);
             }
+
     
             // Adds a Card to players hand
             this.hand = aCard;
+            // this.hand = aCard;
             this.numberOfCards++;
     
-            return (this.getHandSum() <= 21);
+            // return (this.getHandSum() <= 21);
     
         }
     
@@ -48,7 +53,7 @@
     
             // calculate each card's contribution to the sum of the hand
             for (int i = 0; i < this.numberOfCards; i++) {
-                cardNumber = this.hand.getNumber();
+                cardNumber = hand.get(i).getNumber();
     
                 if (cardNumber == 1) {//Ace
                     numberOfAces++;
