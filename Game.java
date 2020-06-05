@@ -20,6 +20,7 @@ public class Game {
         // playerMoney holds players cash - we will be lazy and use doubles instead of
         // bigdecimals
         double playerMoney = 200.0;
+        Player1 betting = new Player1();
         // dealerCards will be the cards the dealer has in their hand
 
         // Just in case it doesnt work may need to tweek this method
@@ -95,7 +96,7 @@ public class Game {
                 endRound = true;
             }
             // Dealer hits at 16 stands at 17
-            while ((thePlayer.getHandSum() < 17) && endRound == false) {
+            while ((dealer.getHandSum() < 17) && endRound == false) {
                 dealer.addCardHand(playingDeck.dealNextCard());
                 dealer.printPlayersHand(false);
             }
@@ -108,7 +109,7 @@ public class Game {
                 endRound = true;
             }
             // Determine if push
-            if ((dealer.getHandSum() == dealer.getHandSum()) && endRound == false) {
+            if ((thePlayer.getHandSum() == dealer.getHandSum()) && endRound == false) {
                 System.out.println("Push.");
                 endRound = true;
             }

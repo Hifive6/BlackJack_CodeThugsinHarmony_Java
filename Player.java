@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Player
@@ -8,7 +9,7 @@ import java.util.ArrayList;
     
         private int numberOfCards;
 
-        private ArrayList<Card> hand;
+        private List<Card> hand;
     
         //Constructor for Player class
         public Player(String name) {
@@ -21,8 +22,7 @@ import java.util.ArrayList;
         //Reset the players's hand to have no Cards
         public void emptyHand() {
             for (int c = 0; c < 10; c++) {
-                this.hand = null;
-    
+                hand.clear();
                 this.numberOfCards = 0;
             }
         }
@@ -38,8 +38,8 @@ import java.util.ArrayList;
 
     
             // Adds a Card to players hand
-            this.hand = aCard;
             // this.hand = aCard;
+            hand.add(aCard);
             this.numberOfCards++;
     
             // return (this.getHandSum() <= 21);
@@ -76,13 +76,14 @@ import java.util.ArrayList;
         // prints the cards in the player's hand.
         public void printPlayersHand(boolean showFirstCard) {
             System.out.printf("%s's cards: \n", this.name);
-    
-            for (int i = 0; i < this.numberOfCards; i++) {
+            
+            for (int i = 0; i < numberOfCards; i++) {
     
                 if (i == 0 && !showFirstCard) {
+                    
                     System.out.println(" [hidden] ");
                 } else {
-                    System.out.printf("  %s\n", this.hand.toString());
+                    System.out.printf("  %s\n", hand.get(i).toString());
                 }
             }
         }
