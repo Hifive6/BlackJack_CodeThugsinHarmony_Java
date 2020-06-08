@@ -61,12 +61,7 @@ public class Player1 {
                 System.out.println("Please add at least $200 to begin again");
                 int amount = scanner.nextInt();
                 balanceMoney += amount;
-                // } eif (amount <= 200) {
-                // System.out.println("That wasn't quite Enough - Please add at least $200 to
-                // begin again");
-                // }
 
-                // }
             } else {
                 scanner.close();
                 System.exit(0);
