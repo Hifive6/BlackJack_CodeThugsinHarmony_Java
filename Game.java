@@ -19,8 +19,9 @@ public class Game {
         // playerMoney holds players cash - we will be lazy and use doubles instead of
         // bigdecimals
         Player1 betting = new Player1();
-        double playerMoney = betting.updateBalanceMoney();;
-        
+        double playerMoney = betting.updateBalanceMoney();
+        ;
+
         // dealerCards will be the cards the dealer has in their hand
 
         // Just in case it doesnt work may need to tweek this method
@@ -33,7 +34,8 @@ public class Game {
         // Game loop
         while (playerMoney > 0) {
             // Take Bet
-            // System.out.println("You have $" + playerMoney + ", how much would you like to bet?");
+            // System.out.println("You have $" + playerMoney + ", how much would you like to
+            // bet?");
 
             // double playerBet = userInput.nextDouble();
             double playerBet = betting.getBet();
@@ -126,26 +128,21 @@ public class Game {
                 betting.updateBalanceMoney();
                 System.out.println("You win the hand.");
 
-                
                 endRound = true;
             } else if (endRound == false) // dealer wins
-            {   
+            {
                 betting.userWins = false;
                 betting.updateBalanceMoney();
                 System.out.println("Dealer wins.");
-                
+
             }
 
             // End of hand - put cards back in deck
             thePlayer.emptyHand();
             dealer.emptyHand();
-            // playingDeck.moveAllToDeck(playingDeck);
-            // dealerCards.moveAllToDeck(playingDeck);
             System.out.println("End of Hand.");
 
         }
-        // Game is over
-        System.out.println("Game over! You lost all your money. :(");
 
         // Close Scanner
         userInput.close();

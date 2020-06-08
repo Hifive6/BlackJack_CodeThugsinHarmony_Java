@@ -54,11 +54,21 @@ public class Player1 {
 
         if (getBalanceMoney() == 0) {
 
-            System.out.println("Looks like you've run out of your money,You lose and the game ends");
-            System.exit(0);
+            System.out.println("Looks like you've run out of your money,would you like to try again? Y/N");
+            Scanner input = new Scanner(System.in);
+            answer = input.next();
+
+            if (answer.equalsIgnoreCase("Y")) {
+                System.out.println("How much would you like to add?");
+                int amount = input.nextInt();
+
+                balanceMoney += amount;
+            } else {
+
+                System.exit(0);
+            }
         }
 
-       
         return balanceMoney;
     }
 
@@ -76,8 +86,8 @@ public class Player1 {
     }
 
     // public static void main(String[] args) {
-    //     Player1 player = new Player1();
-    //     player.getBet();
-    //     player.updateBalanceMoney();
+    // Player1 player = new Player1();
+    // player.getBet();
+    // player.updateBalanceMoney();
     // }
 }
