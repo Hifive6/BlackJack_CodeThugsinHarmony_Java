@@ -43,7 +43,7 @@ public class Game {
             // double playerBet = userInput.nextDouble();
             double playerBet = betting.getBet();
 
-            betting.getBalanceMoney();
+            // betting.getBalanceMoney();
             boolean endRound = false;
             if (playerBet > playerMoney) {
                 // Break if they bet too much

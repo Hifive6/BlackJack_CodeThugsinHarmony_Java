@@ -27,7 +27,7 @@ public class Player1 {
 
     // 2) allow the player to bet in increments of $5 as the cards are drawn
     public int getBet() {
-        System.out.println("You have $" + balanceMoney);
+        // System.out.println("You have $" + balanceMoney);
         System.out.println("You can enter the bet amount in the increment of $5");
         bet = scanner.nextInt();
 
@@ -48,7 +48,7 @@ public class Player1 {
             balanceMoney = getBalanceMoney() - bet;// if he/she lose his bet money
             // is lost
         }
-        System.out.println("Your amount now after a game is $" + balanceMoney);
+        System.out.println("Your amount is $" + balanceMoney);
 
         // 4) If the player’s balance reaches $0, they lose and the game ends.
 
