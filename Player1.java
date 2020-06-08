@@ -10,7 +10,7 @@
 import java.util.Scanner;
 
 public class Player1 {
-    Scanner scanner = new Scanner(System.in);
+    // Scanner scanner = new Scanner(System.in);
     private int balanceMoney = 200;
     private int bet;
     String answer;
@@ -53,13 +53,12 @@ public class Player1 {
         // 4) If the player’s balance reaches $0, they lose and the game ends.
 
         if (getBalanceMoney() == 0) {
+
             System.out.println("Looks like you've run out of your money,You lose and the game ends");
+            System.exit(0);
         }
 
-        // Ask user if he wants to continue
-        // System.out.println("Do you want to go for another round ? Hit Y for yes or N
-        // for no");
-        // answer = scanner.nextLine();
+       
         return balanceMoney;
     }
 
