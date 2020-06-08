@@ -35,6 +35,7 @@ public class Player1 {
             System.out.println("Enter between $5 and $" + balanceMoney + " in the increment of $5");
             bet = scanner.nextInt();
         }
+        // scanner.close();
         return balanceMoney;
     }
 
