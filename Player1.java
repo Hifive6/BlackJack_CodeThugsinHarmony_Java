@@ -48,7 +48,7 @@ public class Player1 {
             balanceMoney = getBalanceMoney() - bet;// if he/she lose his bet money
             // is lost
         }
-        System.out.println("Your amount is $" + balanceMoney);
+        System.out.println("You have $" + balanceMoney);
 
         // 4) If the player’s balance reaches $0, they lose and the game ends.
 
@@ -59,15 +59,9 @@ public class Player1 {
             answer = scanner.next();
 
             if (answer.equalsIgnoreCase("Y")) {
-                System.out.println("Please add at least $200 to begin again");
-                int amount = scanner.nextInt();
-                balanceMoney += amount;
-                // } eif (amount <= 200) {
-                // System.out.println("That wasn't quite Enough - Please add at least $200 to
-                // begin again");
-                // }
+                System.out.println("Excellent, We will start out at $200 to begin again");
+                balanceMoney = 200;
 
-                // }
             } else {
                 scanner.close();
                 System.exit(0);

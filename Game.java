@@ -31,8 +31,6 @@ public class Game {
         // Just in case it doesnt work may need to tweek this method
         // Deck dealerCards = new Deck();
 
-        
-
         // Play the game while the player has money
         // Game loop
         while (playerMoney > 0) {
@@ -82,7 +80,7 @@ public class Game {
                     // thePlayer.printPlayersHand(true);
                     // Bust if they go over 21
                     if (thePlayer.getHandSum() > 21) {
-                        System.out.println("Bust. Currently valued at: " + thePlayer.getHandSum());
+                        System.out.println("Bust. Your current cards are valued at: " + thePlayer.getHandSum());
                         betting.userWins = false;
                         betting.updateBalanceMoney();
                         endRound = true;
@@ -149,7 +147,7 @@ public class Game {
 
         // Close Scanner
         userInput.close();
-    
+
         // Close Scanner
 
     }
