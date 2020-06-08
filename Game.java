@@ -31,8 +31,6 @@ public class Game {
         // Just in case it doesnt work may need to tweek this method
         // Deck dealerCards = new Deck();
 
-        
-
         // Play the game while the player has money
         // Game loop
         while (playerMoney > 0) {
@@ -43,7 +41,7 @@ public class Game {
             // double playerBet = userInput.nextDouble();
             double playerBet = betting.getBet();
 
-            betting.getBalanceMoney();
+            // betting.getBalanceMoney();
             boolean endRound = false;
             if (playerBet > playerMoney) {
                 // Break if they bet too much
@@ -149,7 +147,7 @@ public class Game {
 
         // Close Scanner
         userInput.close();
-    
+
         // Close Scanner
 
     }
