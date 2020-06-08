@@ -10,12 +10,12 @@
 import java.util.Scanner;
 
 public class Player1 {
-    // Scanner scanner = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
     private int balanceMoney = 200;
     private int bet;
     String answer;
 
-    boolean userWins = getHandSum();
+    boolean userWins;
 
     public Player1() {
 
@@ -27,9 +27,8 @@ public class Player1 {
 
     // 2) allow the player to bet in increments of $5 as the cards are drawn
     public int getBet() {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("You have $" + balanceMoney);
-        System.out.println("you can enter the bet amount in the increment of $5");
+        System.out.println("You can enter the bet amount in the increment of $5");
         bet = scanner.nextInt();
 
         while ((bet % 5 != 0) || (bet < 0 || bet > balanceMoney)) {
@@ -55,16 +54,21 @@ public class Player1 {
         if (getBalanceMoney() == 0) {
 
             System.out.println("Looks like you've run out of your money,would you like to try again? Y/N");
-            Scanner input = new Scanner(System.in);
-            answer = input.next();
+
+            answer = scanner.next();
 
             if (answer.equalsIgnoreCase("Y")) {
-                System.out.println("How much would you like to add?");
-                int amount = input.nextInt();
-
+                System.out.println("Please add at least $200 to begin again");
+                int amount = scanner.nextInt();
                 balanceMoney += amount;
+                // } eif (amount <= 200) {
+                // System.out.println("That wasn't quite Enough - Please add at least $200 to
+                // begin again");
+                // }
+
+                // }
             } else {
-                input.close();
+                scanner.close();
                 System.exit(0);
             }
         }
@@ -74,16 +78,16 @@ public class Player1 {
 
     // method to check whether use wins or lose
 
-    public boolean getHandSum() {
-        int handSum = 0;
-        if (handSum <= 21) {
-            userWins = true;
-        } else {
-            userWins = false;
-        }
-        return userWins;
+    // public boolean getHandSum() {
+    // int handSum = 0;
+    // if (handSum <= 21) {
+    // userWins = true;
+    // } else {
+    // userWins = false;
+    // }
+    // return userWins;
 
-    }
+    // }
 
     // public static void main(String[] args) {
     // Player1 player = new Player1();
