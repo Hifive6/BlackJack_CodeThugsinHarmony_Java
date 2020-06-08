@@ -64,7 +64,7 @@ public class Player1 {
 
                 balanceMoney += amount;
             } else {
-
+                input.close();
                 System.exit(0);
             }
         }
