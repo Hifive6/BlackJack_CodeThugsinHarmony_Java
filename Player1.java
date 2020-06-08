@@ -36,6 +36,7 @@ public class Player1 {
             System.out.println("Enter between $5 and $" + balanceMoney + " in the increment of $5");
             bet = scanner.nextInt();
         }
+        // scanner.close();
         return balanceMoney;
     }
 
@@ -55,7 +56,7 @@ public class Player1 {
         if (getBalanceMoney() == 0) {
 
             System.out.println("Looks like you've run out of your money,You lose and the game ends");
-            System.exit(0);
+            // System.exit(0);
         }
 
        

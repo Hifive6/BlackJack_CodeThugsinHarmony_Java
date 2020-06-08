@@ -3,13 +3,17 @@ import java.util.Scanner;
 public class Game {
 
     public static void main(String[] args) {
-
+        // Scanner for user input
         System.out.println("Welcome to Blackjack!");
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("Please enter your Name: ");
+        String name = userInput.nextLine();
+
         // Creating the Deck from the Deck class and shuffling them
         Deck playingDeck = new Deck(1, true);
 
         // Created two players the real player and the dealer
-        Player thePlayer = new Player("Joe");
+        Player thePlayer = new Player(name);
         Player dealer = new Player("dealer");
         // playingDeck.createFullDeck();
         // playingDeck.shuffle();
@@ -26,8 +30,7 @@ public class Game {
         // Just in case it doesnt work may need to tweek this method
         // Deck dealerCards = new Deck();
 
-        // Scanner for user input
-        Scanner userInput = new Scanner(System.in);
+        
 
         // Play the game while the player has money
         // Game loop
@@ -96,7 +99,7 @@ public class Game {
             dealer.printPlayersHand(true);
             // See if dealer has more points than player
             if ((dealer.getHandSum() > thePlayer.getHandSum()) && endRound == false) {
-                System.out.println("Dealer beats you " + thePlayer.getHandSum() + " to " + dealer.getHandSum());
+                System.out.println("Dealer beats you " + dealer.getHandSum() + " to " + thePlayer.getHandSum());
                 betting.userWins = false;
                 betting.updateBalanceMoney();
                 endRound = true;
@@ -146,9 +149,11 @@ public class Game {
         }
         // Game is over
         System.out.println("Game over! You lost all your money. :(");
-
-        // Close Scanner
+        System.out.println("Would you like to play again (Y)Yes or (N)No");
+        answer = userInput.nextLine();
         userInput.close();
+    
+        // Close Scanner
 
     }
 
